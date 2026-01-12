@@ -1,6 +1,8 @@
-const myweight = Number(process.argv[2]);
-const myheight = Number(process.argv[3]);
-const bmi = (myweight / (myheight * myheight)).toFixed(2);
+const weight = Number(process.argv[2]);
+const heightCm = Number(process.argv[3]);
+const heightM = heightCm / 100;
+const bmi = weight / (heightM * heightM);
+const bmiRounded = bmi.toFixed(2);
 
 console.log(`Dein BMI ist ${bmi}.`);
 console.log(`Das bedeutet, du bist ${bmi < 18.5 ? 'untergewichtig' : bmi < 24.9 ? 'normalgewichtig' : bmi < 29.9 ? 'übergewichtig'}.`);
